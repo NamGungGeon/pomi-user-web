@@ -1,0 +1,89 @@
+img[src='/res/icons/marker.png'] {
+  filter: hue-rotate(45deg);
+}
+
+h2 {
+  color: white;
+  text-align: center;
+  margin: 32px 0;
+}
+
+.attention {
+  max-width: 1200px;
+}
+
+div[url=('http://t1.daumcdn.net/localimg/localimages/07/mapjsapi/2x/triangle.png')] {
+  background-color: black !important;
+}
+
+.container_mapslogs {
+  display: flex;
+}
+
+.container_mapslogs > * {
+  flex: 1;
+}
+
+#infoWindow {
+  background-color: white;
+  padding: 8px;
+}
+
+table {
+  width: 100%;
+  border: 1px solid white;
+  color: white;
+  border-collapse: collapse;
+  border-radius: 16px;
+  overflow: hidden;
+}
+table * {
+  box-sizing: border-box;
+}
+
+table th {
+  padding: 16px 0;
+  background-color: #f1407cbb;
+}
+
+table tr:nth-child(even) {
+  width: 100%;
+  background-color: #f2f2f277;
+}
+
+#logs > th,
+td {
+  border-bottom: 1px solid white;
+  padding: 8px;
+  cursor: pointer;
+}
+
+#logs > tr:hover {
+  background-color: #f1407c88;
+}
+
+#logs {
+  text-align: center;
+}
+
+@media screen and (max-width: 500px) {
+  .container_full {
+    display: flex;
+    justify-content: center;
+    margin-top: 53.1px;
+    padding: 0px 8px 8px;
+  }
+
+  .container_full > .attention {
+    width: 100%;
+    max-width: 768px;
+  }
+
+  .container_mapslogs {
+    flex-direction: column;
+  }
+
+  .container_mapslogs > * {
+    flex: none;
+  }
+}

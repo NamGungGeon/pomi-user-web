@@ -1,0 +1,146 @@
+/* This CSS only for index page's content */
+.content {
+  position: absolute;
+  top: 49.24px;
+  height: calc(300% - 49.24px * 3);
+  width: 100%;
+}
+img {
+  max-width: 100%;
+}
+
+.intro:nth-child(2n-1) {
+  background-color: #8801fe66;
+}
+.intro:nth-child(2n-1) > .attention {
+  flex-direction: row;
+}
+
+.intro {
+  background-color: #c71fbf66;
+  height: calc(100% / 3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.intro > .attention {
+  width: 100%;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-around;
+  align-items: center;
+}
+.intro > .attention > * {
+  flex: 1;
+  text-align: center;
+}
+
+.screenshots {
+  display: flex;
+  justify-content: center;
+}
+.screenshots > div {
+  float: left;
+  width: 128px;
+  transform: translateY(-16px);
+}
+.screenshots > div:hover {
+  z-index: 99999;
+}
+.screenshots div:nth-child(2n-1) {
+  transform: translateY(16px);
+}
+.screenshots img {
+  max-width: none;
+  width: 200px;
+  transition: 0.3s all;
+  cursor: pointer;
+  filter: grayscale(0.5);
+  box-shadow: 0 0 16px #00000066;
+}
+.screenshots img:hover {
+  transform: scale(1.2) !important;
+  filter: none;
+}
+
+h1 {
+  color: white;
+  font-size: 32px;
+  text-shadow: none;
+  line-height: 1.38;
+}
+
+footer {
+  background-color: white;
+  padding: 16px;
+  font-size: 16px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  position: absolute;
+  top: calc(300% - 50.24px * 3);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+footer > section {
+  color: #8b95a1;
+  font-size: 15px;
+  line-height: 15px;
+  text-align: center;
+  word-break: keep-all;
+  width: 100%;
+}
+
+footer > section > hr {
+  margin: 10px;
+  border: 0;
+  border-top: 1px solid #eee;
+}
+
+footer > section > strong {
+  font-size: 18px;
+  line-height: 40px;
+  color: #333d4b;
+}
+
+footer > section > a {
+  font-size: 13px;
+}
+
+@media (max-width: 500px) {
+  .intro > .attention {
+    height: 100%;
+    justify-content: space-around;
+    flex-direction: column !important;
+  }
+  .intro > .attention > * {
+    flex: 0;
+    text-align: center;
+  }
+  .screenshots {
+    display: none;
+  }
+
+  footer {
+    padding: 4px;
+    height: 250px;
+  }
+
+  footer > section {
+    font-size: 8px;
+  }
+
+  footer > section > hr {
+    margin: 4px;
+    border: 0;
+    border-top: 1px solid #eee;
+  }
+
+  footer > section > a {
+    font-size: 8px;
+  }
+}

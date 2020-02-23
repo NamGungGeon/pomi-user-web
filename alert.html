@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Pomi - alert</title>
+    <meta charset="utf-8" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/common.css" />
+    <link rel="stylesheet" href="./css/alert.css" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <nav>
+      <div>
+        <img
+          src="./res/icons/baseline_menu_black_18dp.png"
+          alt=""
+          style="width: 25px;"
+          class="menu"
+          onclick="toggleSidenav()"
+        />
+        <a href="./index.html" class="logo">
+          <img src="./res/logo/logo_txt.png" alt="" width="100" />
+        </a>
+      </div>
+      <div class="links" id="topnav"></div>
+    </nav>
+    <section class="fullcover" onclick="toggleSidenav()" id="sidenavWrapper">
+      <section id="re_Sidenav" class="sidenav"></section>
+    </section>
+    <section class="container_full">
+      <section class="attention">
+        <section class="container_content">
+          <section class="content_Info">
+            <img src="./res/android.png" width="36px" height="36px" />
+            <section class="showColumn">
+              <h3>익명</h3>
+              <span id="createDate" class="description"></span>
+            </section>
+          </section>
+          <section class="content_title">
+            <span id="lv">위험</span>
+            <h3 id="title" style="display: inline"></h3>
+          </section>
+          <section class="_content">
+            <p id="content"></p>
+            <div id="map" style="width:100%;height:400px;"></div>
+          </section>
+          <br />
+          <section class="content_review">
+            <section id="goodCnt">★&nbsp;</section>
+            <section id="num_comment">☆ 15</section>
+            <section id="num_bookmark">※ 3</section>
+          </section>
+        </section>
+        <br />
+        <hr noshade color="#8a8a8a" size="1" style="width:100%;" />
+        <br />
+        <section class="container_comments">
+          <section class="_content">
+            <div id="comments"></div>
+          </section>
+          <section class="content_title">
+            <span id="_createDate"></span>
+          </section>
+          <br /><br />
+        </section>
+      </section>
+
+      <section class="fixedBottom">
+        <section class="container_comment">
+          <input
+            type="text"
+            id="al_comment"
+            maxlength="80"
+            placeholder="댓글을 입력하세요."
+          />
+          <span id="makeComment" class="btn" onclick="makeComment()">
+            등록
+          </span>
+        </section>
+      </section>
+      <div id="snackbar"></div>
+    </section>
+    <script
+      type="text/javascript"
+      src="http://dapi.kakao.com/v2/maps/sdk.js?appkey=a87a5f176391f8d0aed86f60921f9dbc"
+    ></script>
+    <script src="./js/common.js"></script>
+    <script src="./js/alert.js"></script>
+  </body>
+</html>

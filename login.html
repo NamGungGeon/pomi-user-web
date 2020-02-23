@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Pomi - Login</title>
+    <meta charset="utf-8" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/login.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <section class="fullcover">
+      <section class="content">
+        <section class="logo">
+          <a href="index.html">
+            <img src="./res/logo/logo_txt.png" alt="logo 이미지" />
+          </a>
+        </section>
+        <section class="user_input">
+          <input type="text" id="id" name="" placeholder="아이디" autofocus />
+          <input
+            type="password"
+            id="pw"
+            name=""
+            maxlength="15"
+            placeholder="패스워드"
+          />
+        </section>
+        <span onclick="onToast('개발중입니다')">비밀번호 찾기</span>
+        <br />
+        <div class="btn" onclick="login()">
+          로그인
+        </div>
+        <section class="container_hr">
+          <hr noshade color="white" size="1" />
+        </section>
+        <p>포미가 처음이신가요?</p>
+        <section class="btn-container">
+          <a href="./join.html" class="btn" id="btn_join">
+            회원가입
+          </a>
+        </section>
+      </section>
+      <div id="snackbar"></div>
+    </section>
+  </body>
+  <script src="./js/login.js"></script>
+  <script src="./js/common.js"></script>
+</html>

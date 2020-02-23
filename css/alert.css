@@ -1,0 +1,161 @@
+.logo {
+  filter: none;
+}
+
+nav {
+  background-color: #8801fe;
+}
+
+nav > .links > * {
+  color: white;
+}
+
+.container_full {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 53.1px;
+  padding: 16px 8px;
+}
+.container_full > .attention {
+  width: 100%;
+  max-width: 768px;
+}
+
+.container_content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.content_Info {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 16px;
+}
+
+.showColumn {
+  margin-left: 8px;
+  display: flex;
+  flex-direction: column;
+}
+
+.content_title {
+  margin-bottom: 8px;
+}
+
+._content {
+  display: flex;
+  flex-direction: column;
+}
+
+._content > * {
+  width: 100%;
+}
+
+.content_review {
+  display: flex;
+}
+
+.content_review > * {
+  margin: 0 8px;
+}
+
+.container_comments {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* comments wrapper */
+#comments > p {
+  padding: 16px 0;
+  word-break: break-all;
+  border-bottom: 0.6px solid #e9e9e9;
+}
+
+#comments > p > .header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+}
+#comments > p > .header > #nickname {
+  padding: 0;
+  flex: 1;
+}
+#comments > p > .header > img {
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+}
+
+.fixedBottom {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+
+  display: flex;
+  width: 100%;
+  height: auto;
+  justify-content: center;
+  background-color: white;
+  box-shadow: -4px 0 8px #00000022;
+}
+.container_comment {
+  max-width: 768px;
+  padding: 16px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.container_comment > input {
+  flex: 1;
+  border-radius: 8px;
+  padding: 8px 16px;
+  border-width: 0;
+  background-color: #cfcfcf33;
+}
+#makeComment {
+  background-color: #8801fe;
+  margin-bottom: 0;
+  border-radius: 8px;
+}
+
+#lv {
+  border-radius: 8px;
+  padding: 4px 8px;
+  background-color: red;
+  color: white;
+  font-size: 0.8rem;
+}
+.description {
+  font-size: 0.8rem;
+  color: #8a8a8a;
+}
+
+#map {
+  margin: 8px 0;
+}
+img[src='/res/icons/marker.png'] {
+  filter: hue-rotate(45deg);
+}
+@media screen and (max-width: 500px) {
+  ._content {
+    flex-direction: column;
+    align-items: center;
+  }
+  ._content > * {
+    flex: none;
+  }
+  #map {
+    height: 250px !important;
+  }
+
+  .container_comment {
+    padding: 8px;
+  }
+}

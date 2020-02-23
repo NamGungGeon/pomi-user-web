@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Pomi - infrastructure</title>
+    <meta charset="utf-8" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/common.css" />
+    <link rel="stylesheet" href="./css/mypage.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+
+  <body>
+    <nav>
+      <div>
+        <img
+          src="./res/icons/baseline_menu_black_18dp.png"
+          alt=""
+          style="width: 25px;"
+          class="menu"
+          onclick="toggleSidenav()"
+        />
+        <a href="./index.html" class="logo">
+          <img
+            src="./res/logo/logo_txt.png"
+            style="transform: translateY(2px);"
+            alt=""
+            width="100"
+          />
+        </a>
+      </div>
+      <div class="links" id="topnav"></div>
+    </nav>
+    <section class="fullcover" onclick="toggleSidenav()" id="sidenavWrapper">
+      <section id="re_Sidenav" class="sidenav">
+        <section id="sidenav_top">
+          <p id="sidenav_email" style="font-weight: bold;"></p>
+          <p id="sidenav_myphone"></p>
+        </section>
+        <section id="sidenav_content"></section>
+      </section>
+    </section>
+    <section class="background"></section>
+    <section class="container_full">
+      <section class="attention"></section>
+    </section>
+  </body>
+  <script src="./js/common.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script
+    type="text/javascript"
+    src="http://dapi.kakao.com/v2/maps/sdk.js?appkey=a87a5f176391f8d0aed86f60921f9dbc"
+  ></script>
+  <script src="./js/infrastructure.js"></script>
+</html>

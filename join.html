@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Pomi - Join</title>
+    <meta charset="utf-8" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/common.css" />
+    <link rel="stylesheet" href="./css/join.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  </head>
+
+  <body>
+    <nav>
+      <div>
+        <img
+          src="./res/icons/baseline_menu_black_18dp.png"
+          alt=""
+          style="width: 25px;"
+          class="menu"
+          onclick="toggleSidenav()"
+        />
+        <a href="./index.html" class="logo">
+          <img src="./res/logo/logo_txt.png" alt="" width="100" />
+        </a>
+      </div>
+      <div class="links">
+        <a href="login.html">로그인</a>
+        <a href="join.html">회원가입</a>
+      </div>
+    </nav>
+    <section class="fullcover" onclick="toggleSidenav()" id="sidenavWrapper">
+      <section id="re_Sidenav" class="sidenav">
+        <div><a href="login.html">로그인</a></div>
+        <div><a href="join.html">회원가입</a></div>
+      </section>
+    </section>
+    <section class="background"></section>
+    <section class="container_full">
+      <section class="attention">
+        <h2 class="title">회원가입</h2>
+        <section class="input_container">
+          <section>
+            <span>아이디</span>
+            <input
+              type="text"
+              id="id"
+              placeholder="아이디를 입력하세요 (5~12자)"
+              maxlength="12"
+              value="hello"
+            />
+          </section>
+          <section>
+            <span>비밀번호</span>
+            <input
+              type="password"
+              id="pw"
+              placeholder="비밀번호를 입력하세요 (5~12자)"
+              maxlength="12"
+              value="hello"
+            />
+          </section>
+          <section>
+            <span>비밀번호 확인</span>
+            <input
+              type="password"
+              id="pw_chk"
+              placeholder="비밀번호를 동일하게 입력해 주세요."
+              maxlength="12"
+              value="hello"
+            />
+          </section>
+          <section>
+            <span>이메일(선택사항)</span>
+            <input type="text" id="email" placeholder="이메일을 입력하세요" />
+          </section>
+          <section>
+            <span>생년월일</span>
+            <input
+              type="number"
+              id="birth"
+              placeholder="ex: 970712"
+              maxlength="6"
+              value="970712"
+              oninput="numberMaxLength(this);"
+            />
+          </section>
+
+          <section>
+            <span>휴대폰 번호</span>
+            <input
+              type="number"
+              id="phone"
+              placeholder="ex: 01012345678"
+              maxlength="11"
+              value="01012345678"
+              oninput="numberMaxLength(this);"
+            />
+          </section>
+          <section id="explainGuardSystem">
+            <span style="color: orange; font-weight: bold;"
+              >지정보호자는 왜 기입하나요?</span
+            >
+            <span style="color: white">왜 기입하는지 설명이 필요합니다.</span>
+          </section>
+          <section class="inputGuardsNumber_container">
+            <section>
+              <span>지정보호자</span>
+              <input
+                type="number"
+                id="ph1"
+                placeholder="ex: 01012345678"
+                maxlength="11"
+                value="01012345678"
+                oninput="numberMaxLength(this)"
+              />
+            </section>
+            <section>
+              <span>보호자1</span>
+              <input
+                type="number"
+                id="ph2"
+                placeholder="ex: 01012345678"
+                maxlength="11"
+                oninput="numberMaxLength(this)"
+              />
+            </section>
+            <section>
+              <span>보호자2</span>
+              <input
+                type="number"
+                id="ph3"
+                placeholder="ex: 01012345678"
+                maxlength="11"
+                oninput="numberMaxLength(this)"
+              />
+            </section>
+          </section>
+          <section>
+            <input
+              type="submit"
+              value="가입신청"
+              style="background-color: #F1407C; color: white; margin-top: 32px;"
+              onclick="join()"
+            />
+          </section>
+          <section>
+            <div id="snackbar"></div>
+          </section>
+        </section>
+      </section>
+    </section>
+    <script src="./js/common.js"></script>
+    <script src="./js/join.js"></script>
+  </body>
+</html>

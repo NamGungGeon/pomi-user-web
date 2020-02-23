@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Pomi - My Page</title>
+    <meta charset="utf-8" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/common.css" />
+    <link rel="stylesheet" href="./css/mypage.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+
+  <body>
+    <nav>
+      <div>
+        <img
+          src="./res/icons/baseline_menu_black_18dp.png"
+          alt=""
+          style="width: 25px;"
+          class="menu"
+          onclick="toggleSidenav()"
+        />
+        <a href="./index.html" class="logo">
+          <img
+            src="./res/logo/logo_txt.png"
+            style="transform: translateY(2px);"
+            alt=""
+            width="100"
+          />
+        </a>
+      </div>
+      <div class="links" id="topnav"></div>
+    </nav>
+    <section class="fullcover" onclick="toggleSidenav()" id="sidenavWrapper">
+      <section id="re_Sidenav" class="sidenav">
+        <section id="sidenav_top">
+          <p id="sidenav_email" style="font-weight: bold;"></p>
+          <p id="sidenav_myphone"></p>
+        </section>
+        <section id="sidenav_content"></section>
+      </section>
+    </section>
+    <section class="background"></section>
+    <section class="container_full">
+      <section class="attention">
+        <section class="tab">
+          <span
+            class="tablinks"
+            id="defaultOpen"
+            onclick="showMenu(event,'userInfo')"
+          >
+            회원정보
+          </span>
+          <span class="tablinks" onclick="showMenu(event,'usernewPw')">
+            비밀번호 변경
+          </span>
+          <span class="tablinks" onclick="showMenu(event,'userLoc')">
+            내 위치기록
+          </span>
+          <span class="tablinks" onclick="showMenu(event,'userDrop')">
+            회원탈퇴
+          </span>
+        </section>
+      </section>
+      <section class="container_contents">
+        <!-- <div class="loader"></div> -->
+        <section id="userInfo" class="tabcontent">
+          <h2>회원정보</h2>
+          <section class="container_tabcontent">
+            <section>
+              <span>&nbsp;아이디</span>
+              <input type="text" id="id" value="" readonly disabled />
+            </section>
+            <section>
+              <span>&nbsp;캐시</span>
+              <input type="text" id="cash" value="" readonly disabled />
+            </section>
+            <section>
+              <span>&nbsp;생년월일</span>
+              <input type="text" id="birthday" value="" readonly disabled />
+            </section>
+            <section>
+              <span>&nbsp;핸드폰번호</span>
+              <input
+                type="text"
+                id="myphone"
+                value=""
+                maxlength="11"
+                oninput="numberMaxLength(this);"
+              />
+            </section>
+            <section>
+              <span>&nbsp;지정보호자 1</span>
+              <input
+                type="text"
+                id="ph1"
+                value=""
+                maxlength="11"
+                oninput="numberMaxLength(this);"
+              />
+            </section>
+            <section>
+              <span>&nbsp;지정보호자 2</span>
+              <input
+                type="text"
+                id="ph2"
+                value=""
+                placeholder="ex: 01012345678"
+                maxlength="11"
+                oninput="numberMaxLength(this);"
+              />
+            </section>
+            <section>
+              <span>&nbsp;지정보호자 3</span>
+              <input
+                type="text"
+                id="ph3"
+                value=""
+                placeholder="ex: 01012345678"
+                maxlength="11"
+                oninput="numberMaxLength(this);"
+              />
+            </section>
+            <section>
+              <span>&nbsp;이메일</span>
+              <input
+                type="text"
+                id="email"
+                placeholder="등록된 이메일이 없습니다"
+                value=""
+              />
+            </section>
+            <section
+              class="btn btnInMypage"
+              onclick="modifyuserinfoModal('회원정보를 수정하시겠습니까?')"
+            >
+              수정하기
+            </section>
+          </section>
+        </section>
+        <section id="usernewPw" class="tabcontent">
+          <h2>비밀번호 변경</h2>
+          <section style="padding-top:24px" class="container_tabcontent">
+            <input
+              id="newPw"
+              type="password"
+              maxlength="12"
+              placeholder="새로 사용할 비밀번호를 입력해주세요"
+            />
+            <input
+              id="newPwchk"
+              type="password"
+              maxlength="12"
+              placeholder="비밀번호를 동일하게 입력해주세요"
+            />
+            <section
+              class="btn btnInMypage"
+              onclick="updateuserPwModal('비밀번호를 수정하시겠습니까?')"
+            >
+              비밀번호 변경
+            </section>
+          </section>
+        </section>
+        <section id="userLoc" class="tabcontent">
+          <h2>내 위치기록</h2>
+          <section class="container_tabcontent">
+            <section class="container_mapslogs">
+              <div
+                id="map"
+                style="width:100%;height:450px!important;border-radius: 8px;"
+              ></div>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <section class="container_table">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>
+                        시간
+                      </th>
+                      <th>
+                        위치
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody id="logs"></tbody>
+                </table>
+              </section>
+            </section>
+            <br />
+            <section
+              class="btn btnInMypage"
+              onclick="dropuserlogModal('내 위치기록을 모두 삭제하시겠습니까?')"
+            >
+              모든 기록 삭제
+            </section>
+          </section>
+        </section>
+        <section id="userDrop" class="tabcontent">
+          <h2>회원탈퇴</h2>
+          <section class="container_tabcontent" style="text-align: center;">
+            <span id="_droplog">
+              계정 삭제를 진행하시겠습니까?
+            </span>
+            <section
+              class="btn btnInMypage"
+              onclick="deleteuserModal('계정 삭제를 진행하시겠습니까?')"
+            >
+              즉시 삭제하겠습니다
+            </section>
+          </section>
+        </section>
+      </section>
+    </section>
+    <div id="snackbar"></div>
+    <div id="container-modal" class="container-modal">
+      <div class="modal">
+        <div id="header"></div>
+        <div id="body"></div>
+        <div id="actions">
+          <span id="yes"></span>
+          <span id="no"></span>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="./js/common.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script
+    type="text/javascript"
+    src="http://dapi.kakao.com/v2/maps/sdk.js?appkey=a87a5f176391f8d0aed86f60921f9dbc"
+  ></script>
+  <script src="./js/mypage.js"></script>
+</html>
